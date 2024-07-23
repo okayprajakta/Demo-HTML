@@ -11,11 +11,11 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 <style>
-  *{
-    padding: 0px;
-    margin : 0px;
+*{
+    padding: 0%;
+    margin : 0%;
     box-sizing: border-box;
-  }
+}
     .Portfolio_sections{
         background-color: #f0ece2 !important;
         width: 100%;
@@ -175,10 +175,12 @@
         }
         .child1{
             height: inherit;
-            width: 40%;
+            width: 25%;
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-left: 2%;
+            
         }
         .child2{
             height: inherit;
@@ -235,7 +237,7 @@
     background-color:  #f0ece2;
     box-sizing: content-box;
     margin-top: auto;
-    margin-bottom: auto;
+    margin-bottom: 40;
 }
 
 .Title{
@@ -253,7 +255,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 400px;
+    min-height: 250px;
+    
 }
 
 .skills{
@@ -262,7 +265,7 @@
     padding: 20px 35px;
     background:#e9d4bd;
 	border-radius: 20px;
-	margin: 15px;
+	margin: 15px 50px 15px 15px;
 	position: relative ;
 	overflow: hidden;
 	text-align:center;
@@ -327,7 +330,163 @@
   }
 }
 
+#Projects{
+  padding:3%;
+  padding-top: 10%;
+}
 
+:root {
+  --card-height: 270px;
+  --card-width: 270px;
+}
+
+*{
+  box-sizing: border-box;
+  width: 100%;
+}
+h1{
+  font-size: 30px;
+  font-weight: bolder;
+  font-weight: Arial Black;
+  color: #596e79;
+  justify-content: flex-start;
+}
+
+.card {
+  width: var(--card-width);
+  height: var(--card-height);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0%;
+  perspective: 2500px;
+  margin: 0;
+  background: #f0ece2;
+  border: transparent #596e79;
+  border-width: 3px;
+}
+
+.cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wrapper {
+  transition: all 0.5s;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+.card:hover .wrapper {
+  transform: perspective(900px) translateY(-5%) rotateX(64deg) translateZ(0);
+  box-shadow: 2px 35px 32px -8px#33313b;
+  -webkit-box-shadow: 2px 35px 32px -8px#33313b;
+  -moz-box-shadow: 2px 35px 32px -8px #33313b;
+}
+
+.wrapper::before,
+.wrapper::after {
+  content: "";
+  opacity: 0;
+  width: 100%;
+  height: 80px;
+  transition: all 0.5s;
+  position: absolute;
+  left: 0;
+}
+.wrapper::before {
+  top: 0;
+  height: 100%;
+  background-image: linear-gradient(
+    to top,
+    transparent 46%,
+    #f0e4d6 68%,
+    #f0e4d6 97%
+  );
+}
+.wrapper::after {
+  bottom: 0;
+  opacity: 1;
+  background-image: linear-gradient(
+    to bottom,
+    transparent 36%,
+    #f0e4d6  80%,
+    #f0e4d6  97%
+  );
+
+}
+
+.card:hover .wrapper::before,
+.wrapper::after {
+  opacity: 1;
+}
+
+.card:hover .wrapper::after {
+  height: 120px;
+}
+
+.card:hover {
+  transform: translate3d(0%, -50px, 100px);
+}
+
+.character {
+  width: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+  position: absolute;
+  z-index: -1;
+}
+
+.card:hover .character {
+  opacity: 1;
+  transform: translate3d(0%, -30%, 100px);
+}
+
+.contactme{
+    width: 100%;
+    height: 270px;
+    background-color:#f0ece2;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.contactme p{
+    font-size: 25px;
+    color:  rgba(119, 92, 67, 0.8);
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.contactme .button{
+
+    background-color: #dfd3c3;
+    color:  rgba(119, 92, 67, 0.8);
+    border: 2px solid transparent;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 13px 30px;
+    border-radius: 30px;
+    transition: .4s;
+}
+
+.contactme .button:hover{
+    background-color:transparent ;
+    border: 2px solid #596e79;
+    cursor: pointer;
+}
+
+h2{
+  font-size: 30px;
+  font-weight: bolder;
+  font-weight: Arial Black;
+  color: #596e79;
+  justify-content: flex-start;
+}
 
 
 
@@ -464,12 +623,37 @@
   </div>
 
 </Section>
-<Section id="Projects" class="Portfolio_sections">
-    <h1>My Projects</h1>
+<Section id="Projects" class="Portfolio_sections" align="center" >
+    <h1>MY PROJECTS</h1>
+    <a href="http://127.0.0.1:5500/index.html" alt="My Portfolio" target="_blank">
+      <div class="card">
+        <div class="wrapper">
+          <img src="PORT.png" class="cover-image" />
+        </div>
+        <img src="Untitled-1.png" class="character" />
+      </div>
+    </a>
+    
+    <a href=" " alt="Calculator" target="_blank">
+      <div class="card">
+        <div class="wrapper">
+          <img src="https://img.freepik.com/premium-photo/calculator-scientific-calculator-graphing-calculator-basic-calculator-online-calculator-calcula_980716-16575.jpg" class="cover-image" />
+        </div>
+        <img src="https://img.freepik.com/premium-photo/calculator-scientific-calculator-graphing-calculator-basic-calculator-online-calculator-calcula_980716-16575.jpg" class="character" />
+      </div>
+    </a>
 </Section>
-<Section id="Contact" class="Portfolio_sections">
-    <h1>Contact Here!</h1>
-</Section>
+<Section id="Contact" class="Portfolio_sections" align="center">
+  <div class="contactme">
+    <h2>LET'S CATCH UP !</h2>
+    <p>Give me an Opportunity to Design you a Beautiful website</p>
+      <a class="button" href="mailto:prajaktasurvase.nbnscoe.entc@gmail.com">Contact Me</a>
+
+  </div>
+</section>
+
+
+
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
   AOS.init(
